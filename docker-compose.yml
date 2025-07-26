@@ -1,11 +1,10 @@
-# econoeasy 이미지만을 가지고 해당 compose를 띄운다
 services:
   pickly:
     build:
       context: .
       dockerfile: Dockerfile
-    image: "${DOCKERHUB_USERNAME}/econoeasy-be:${IMAGE_TAG}"
-    container_name: econoeasy-be
+    image: "${DOCKERHUB_USERNAME}/pickly-be:${IMAGE_TAG}"
+    container_name: pickly-be
     # 변수 범위: docker-compose파일
     env_file:
       - ./.env
@@ -25,7 +24,7 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: mysql
+    container_name: pickly-mysql
     restart: unless-stopped
     # .env 파일로부터 RDB 계정 정보를 주입
     env_file:
