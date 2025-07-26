@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: ${PROFILES_ACTIVE}
+  datasource:
+    url: ${RDB_URL}
+    username: ${RDB_USERNAME}
+    password: ${RDB_PASSWORD}
+    driver-class-name: ${RDB_DRIVER_CLASS_NAME}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    #        default_batch_fetch_size: 100
+    show-sql: true
+  data:
+    mongodb:
+      host: ${NOSQL_HOST}
+      port: ${NOSQL_PORT}
+      database: ${NOSQL_DATABASE}
+      username: ${NOSQL_USERNAME}
+      password: ${NOSQL_PASSWORD}
+      authentication-database: ${NOSQL_AUTHENTICATION_DATABASE}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: never
