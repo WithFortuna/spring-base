@@ -1,6 +1,6 @@
 # econoeasy 이미지만을 가지고 해당 compose를 띄운다
 services:
-  econoeasy:
+  pickly:
     build:
       context: .
       dockerfile: Dockerfile

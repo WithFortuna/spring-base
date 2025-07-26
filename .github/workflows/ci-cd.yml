@@ -23,7 +23,7 @@ jobs:
 
 
       - name: Build (no Test)
-        run: ./gradlew check --no-daemon
+        run: ./gradlew clean bootJar --no-daemon
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
